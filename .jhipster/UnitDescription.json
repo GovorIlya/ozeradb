@@ -1,0 +1,36 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "city",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createYear",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "square",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "collesctors",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prst",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "sbros",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180521085119",
+    "entityTableName": "unit_description",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

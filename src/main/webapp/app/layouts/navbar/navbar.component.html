@@ -1,13 +1,5 @@
 <nav class="navbar navbar-dark navbar-expand-md jh-navbar">
-    <div class="jh-logo-container float-left">
-        <a class="jh-navbar-toggler d-lg-none float-right" href="javascript:void(0);" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleNavbar()">
-            <i class="fa fa-bars"></i>
-        </a>
-        <a class="navbar-brand logo float-left" routerLink="/" (click)="collapseNavbar()">
-            <span class="logo-img"></span>
-            <span jhiTranslate="global.title" class="navbar-title">Ozeradb</span> <span class="navbar-version">{{version}}</span>
-        </a>
-    </div>
+
     <div class="navbar-collapse collapse" id="navbarResponsive" [ngbCollapse]="isNavbarCollapsed" [ngSwitch]="isAuthenticated()">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
@@ -18,6 +10,108 @@
                     </span>
                 </a>
             </li>
+            <li *ngSwitchCase="true" ngbDropdown class="nav-item dropdown pointer">
+                    <a class="nav-link dropdown-toggle" routerLinkActive="active" ngbDropdownToggle href="javascript:void(0);" id="kapta-menu">
+                        <span>
+                            <i class="fa fa-" aria-hidden="true"></i>
+                            <span>kapta</span>
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu" ngbDropdownMenu>
+                        <li>
+                            <a class="dropdown-item" routerLink="kapta-kapta" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                                <i class="fa fa-" aria-hidden="true"></i>&nbsp;
+                                <span jhiTranslate="global.menu.kapta-kapta">Kapta Kapta</span>
+                            </a>
+                        </li>
+                        <!-- jhipster-needle-add-element-to-kapta - JHipster will add elements to the kapta here -->
+                    </ul>
+                </li>
+            <li *ngSwitchCase="true" ngbDropdown class="nav-item dropdown pointer">
+                    <a class="nav-link dropdown-toggle" routerLinkActive="active" ngbDropdownToggle href="javascript:void(0);" id="description-menu">
+                        <span>
+                            <i class="fa fa-" aria-hidden="true"></i>
+                            <span>description</span>
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu" ngbDropdownMenu>
+                        <li>
+                            <a class="dropdown-item" routerLink="description-description" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                                <i class="fa fa-" aria-hidden="true"></i>&nbsp;
+                                <span jhiTranslate="global.menu.description-description">Description Description</span>
+                            </a>
+                        </li>
+                        <!-- jhipster-needle-add-element-to-description - JHipster will add elements to the description here -->
+                    </ul>
+                </li>
+            <li *ngSwitchCase="true" ngbDropdown class="nav-item dropdown pointer">
+                    <a class="nav-link dropdown-toggle" routerLinkActive="active" ngbDropdownToggle href="javascript:void(0);" id="teachstate-menu">
+                        <span>
+                            <i class="fa fa-" aria-hidden="true"></i>
+                            <span>teachstate</span>
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu" ngbDropdownMenu>
+                        <li>
+                            <a class="dropdown-item" routerLink="teachstate-teachstate" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                                <i class="fa fa-" aria-hidden="true"></i>&nbsp;
+                                <span jhiTranslate="global.menu.teachstate-teachstate">Teachstate Teachstate</span>
+                            </a>
+                        </li>
+                        <!-- jhipster-needle-add-element-to-teachstate - JHipster will add elements to the teachstate here -->
+                    </ul>
+                </li>
+            <li *ngSwitchCase="true" ngbDropdown class="nav-item dropdown pointer">
+                    <a class="nav-link dropdown-toggle" routerLinkActive="active" ngbDropdownToggle href="javascript:void(0);" id="researchmethod-menu">
+                        <span>
+                            <i class="fa fa-" aria-hidden="true"></i>
+                            <span>researchmethod</span>
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu" ngbDropdownMenu>
+                        <li>
+                            <a class="dropdown-item" routerLink="researchmethod-researchmethod" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                                <i class="fa fa-" aria-hidden="true"></i>&nbsp;
+                                <span jhiTranslate="global.menu.researchmethod-researchmethod">Researchmethod Researchmethod</span>
+                            </a>
+                        </li>
+                        <!-- jhipster-needle-add-element-to-researchmethod - JHipster will add elements to the researchmethod here -->
+                    </ul>
+                </li>
+            <li *ngSwitchCase="true" ngbDropdown class="nav-item dropdown pointer">
+                    <a class="nav-link dropdown-toggle" routerLinkActive="active" ngbDropdownToggle href="javascript:void(0);" id="problemtypes-menu">
+                        <span>
+                            <i class="fa fa-" aria-hidden="true"></i>
+                            <span>problemtypes</span>
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu" ngbDropdownMenu>
+                        <li>
+                            <a class="dropdown-item" routerLink="problemtypes-problemtypes" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                                <i class="fa fa-" aria-hidden="true"></i>&nbsp;
+                                <span jhiTranslate="global.menu.problemtypes-problemtypes">Problemtypes Problemtypes</span>
+                            </a>
+                        </li>
+                        <!-- jhipster-needle-add-element-to-problemtypes - JHipster will add elements to the problemtypes here -->
+                    </ul>
+                </li>
+            <li *ngSwitchCase="true" ngbDropdown class="nav-item dropdown pointer">
+                    <a class="nav-link dropdown-toggle" routerLinkActive="active" ngbDropdownToggle href="javascript:void(0);" id="factormethod-menu">
+                        <span>
+                            <i class="fa fa-" aria-hidden="true"></i>
+                            <span>factormethod</span>
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu" ngbDropdownMenu>
+                        <li>
+                            <a class="dropdown-item" routerLink="factormethod-factormethod" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                                <i class="fa fa-" aria-hidden="true"></i>&nbsp;
+                                <span jhiTranslate="global.menu.factormethod-factormethod">Factormethod Factormethod</span>
+                            </a>
+                        </li>
+                        <!-- jhipster-needle-add-element-to-factormethod - JHipster will add elements to the factormethod here -->
+                    </ul>
+                </li>
             <!-- jhipster-needle-add-element-to-menu - JHipster will add new menu items here -->
             <li *ngSwitchCase="true" ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                 <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="entity-menu">
@@ -29,6 +123,42 @@
                     </span>
                 </a>
                 <ul class="dropdown-menu" ngbDropdownMenu>
+                    <li>
+                        <a class="dropdown-item" routerLink="unit" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.entities.unit">Unit</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="unit-description" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.entities.unitDescription">Unit Description</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="image" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.entities.image">Image</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="research-method" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.entities.researchMethod">Research Method</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="types-problems" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.entities.typesProblems">Types Problems</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="rating-method" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.entities.ratingMethod">Rating Method</span>
+                        </a>
+                    </li>
                     <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
                 </ul>
             </li>
@@ -135,12 +265,7 @@
                             <span jhiTranslate="global.menu.account.login">Sign in</span>
                         </a>
                     </li>
-                    <li *ngSwitchCase="false">
-                        <a class="dropdown-item" routerLink="register" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-user-plus" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.account.register">Register</span>
-                        </a>
-                    </li>
+
                 </ul>
             </li>
         </ul>

@@ -15,6 +15,7 @@ import { OzeradbAppRoutingModule} from './app-routing.module';
 import { OzeradbHomeModule } from './home/home.module';
 import { OzeradbAdminModule } from './admin/admin.module';
 import { OzeradbAccountModule } from './account/account.module';
+import { OzeradbPageSetsModule } from './pages/page-sets.module';
 import { OzeradbEntityModule } from './entities/entity.module';
 import { PaginationConfig } from './blocks/config/uib-pagination.config';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
@@ -36,6 +37,7 @@ import {
         OzeradbSharedModule,
         OzeradbHomeModule,
         OzeradbAdminModule,
+        OzeradbPageSetsModule,
         OzeradbAccountModule,
         OzeradbEntityModule,
         // jhipster-needle-angular-add-module JHipster will add new module here

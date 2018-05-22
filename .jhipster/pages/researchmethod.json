@@ -1,0 +1,11 @@
+{
+    "pages": [
+        {
+            "pageName": "researchmethod",
+            "pageType": "loadAndSaveToServer",
+            "fields": []
+        }
+    ],
+    "pageSetGlyphIcon": "",
+    "changelogDate": "20180521085702"
+}

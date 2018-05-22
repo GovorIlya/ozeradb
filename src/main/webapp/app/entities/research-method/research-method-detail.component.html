@@ -1,0 +1,29 @@
+
+<div *ngIf="researchMethod">
+    <h2><span jhiTranslate="ozeradbApp.researchMethod.detail.title">Research Method</span> {{researchMethod.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="ozeradbApp.researchMethod.file">File</span></dt>
+        <dd>
+            <div *ngIf="researchMethod.file">
+                <a (click)="openFile(researchMethod.fileContentType, researchMethod.file)" jhiTranslate="entity.action.open">open</a>
+                {{researchMethod.fileContentType}}, {{byteSize(researchMethod.file)}}
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'research-method/'+ researchMethod.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

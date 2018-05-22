@@ -1,0 +1,46 @@
+
+<div *ngIf="unitDescription">
+    <h2><span jhiTranslate="ozeradbApp.unitDescription.detail.title">Unit Description</span> {{unitDescription.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="ozeradbApp.unitDescription.city">City</span></dt>
+        <dd>
+            <span>{{unitDescription.city}}</span>
+        </dd>
+        <dt><span jhiTranslate="ozeradbApp.unitDescription.createYear">Create Year</span></dt>
+        <dd>
+            <span>{{unitDescription.createYear}}</span>
+        </dd>
+        <dt><span jhiTranslate="ozeradbApp.unitDescription.square">Square</span></dt>
+        <dd>
+            <span>{{unitDescription.square}}</span>
+        </dd>
+        <dt><span jhiTranslate="ozeradbApp.unitDescription.collesctors">Collesctors</span></dt>
+        <dd>
+            <span>{{unitDescription.collesctors}}</span>
+        </dd>
+        <dt><span jhiTranslate="ozeradbApp.unitDescription.prst">Prst</span></dt>
+        <dd>
+            <span>{{unitDescription.prst}}</span>
+        </dd>
+        <dt><span jhiTranslate="ozeradbApp.unitDescription.sbros">Sbros</span></dt>
+        <dd>
+            <span>{{unitDescription.sbros}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'unit-description/'+ unitDescription.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

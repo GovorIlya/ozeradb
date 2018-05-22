@@ -1,0 +1,24 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "unit",
+            "otherEntityName": "unit",
+            "otherEntityRelationshipName": "typesProblems"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "problemDocument",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        }
+    ],
+    "changelogDate": "20180521085122",
+    "entityTableName": "types_problems",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

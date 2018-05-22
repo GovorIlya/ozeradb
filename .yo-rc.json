@@ -38,6 +38,14 @@
     "nativeLanguage": "ru",
     "languages": [
       "ru"
-    ]
+    ],
+    "herokuDeployType": "jar",
+    "herokuAppName": "glacial-sands-48466"
+  },
+  "generator-jhipster-pages": {
+    "promptValues": {
+      "pageSet": "_CreateNew_",
+      "pageType": "loadAndSaveToServer"
+    }
   }
 }

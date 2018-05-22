@@ -1,0 +1,27 @@
+
+{
+    "ozeradbApp": {
+        "unit" : {
+            "home": {
+                "title": "Units",
+                "createLabel": "Создать новый Unit",
+                "createOrEditLabel": "Создать или отредактировать Unit"
+            },
+            "created": "Новый Unit создан с идентификатором {{ param }}",
+            "updated": "Unit обновлен с идентификатором {{ param }}",
+            "deleted": "Unit удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Unit {{ id }}?"
+            },
+            "detail": {
+                "title": "Unit"
+            },
+            "unitName": "Unit Name",
+            "description": "Description",
+            "image": "Image",
+            "researchMethod": "Research Method",
+            "ratingMethod": "Rating Method",
+            "typesProblems": "Types Problems"
+        }
+    }
+}

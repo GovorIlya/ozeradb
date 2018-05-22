@@ -1,0 +1,11 @@
+{
+    "pages": [
+        {
+            "pageName": "factormethod",
+            "pageType": "loadAndSaveToServer",
+            "fields": []
+        }
+    ],
+    "pageSetGlyphIcon": "",
+    "changelogDate": "20180521090100"
+}

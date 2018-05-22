@@ -1,0 +1,53 @@
+<div>
+    <h2><span data-translate="ozeradbApp.description.description.title">description</span></h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+
+
+
+    <div class="row">
+        <div class="col">
+            <div ngbDropdown class="d-inline-block">
+                <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Объекты</button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <!-- <button class="dropdown-item" >sdfsdf</button>-->
+                    <button  class="dropdown-item" *ngFor="let u of units;    let i =index;"  (click)="onClickMe(i)" >
+                        {{u.unitName}}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <span class="d-inline-block text-truncate"  style="max-width: 150px; font-weight: 600;"  >
+            {{unName}}
+    </span>
+    <div class="table-responsive" *ngIf="unitDescriptions">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th><span>Населенный пункт</span></th>
+                <th><span jhiTranslate="jhipsterApp.unitDescription.createYear">Create Year</span></th>
+                <th><span jhiTranslate="jhipsterApp.unitDescription.square">Square</span></th>
+                <th><span jhiTranslate="jhipsterApp.unitDescription.collesctors">Collesctors</span></th>
+                <th><span jhiTranslate="jhipsterApp.unitDescription.prst">Prst</span></th>
+                <th><span jhiTranslate="jhipsterApp.unitDescription.sbros">Sbros</span></th>
+
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{unName}}</td>
+                <td>{{createYear}}</td>
+                <td>{{square}}</td>
+                <td>{{collectors}}</td>
+                <td>{{prst}}</td>
+                <td>{{sbros}}</td>
+
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

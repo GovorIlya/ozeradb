@@ -1,0 +1,52 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "description",
+            "otherEntityName": "unitDescription",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "unit"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "image",
+            "otherEntityName": "image",
+            "otherEntityRelationshipName": "unit"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "researchMethod",
+            "otherEntityName": "researchMethod",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "ratingMethod",
+            "otherEntityName": "ratingMethod",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "typesProblems",
+            "otherEntityName": "typesProblems",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "unitName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20180521085118",
+    "entityTableName": "unit",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

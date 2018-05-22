@@ -32,8 +32,8 @@ spring:
         serialization.indent_output: true
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:postgresql://localhost:5432/ozeradb
-        username: ozeradb
+        url: jdbc:postgresql://localhost:5432/jdb2
+        username: postgres
         password:
     jpa:
         database-platform: io.github.jhipster.domain.util.FixedPostgreSQL82Dialect

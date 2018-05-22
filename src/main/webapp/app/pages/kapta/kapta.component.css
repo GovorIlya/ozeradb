@@ -1,0 +1,27 @@
+agm-map {
+    height: 600px;
+
+
+}
+map {
+    width: 500px;
+    height: 500px;
+}
+input {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+
+    border: 1px solid silver;
+    border-radius: 15px;
+
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: lighter;
+    text-align: center;
+
+    padding: 10px;
+    z-index: 100;
+    width: 250px;
+}
+

@@ -1,0 +1,68 @@
+<div>
+    <h2>
+        <span jhiTranslate="ozeradbApp.unitDescription.home.title">Unit Descriptions</span>
+        <button class="btn btn-primary float-right jh-create-entity create-unit-description" [routerLink]="['/', { outlets: { popup: ['unit-description-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="ozeradbApp.unitDescription.home.createLabel">
+            Create new Unit Description
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="unitDescriptions">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="ozeradbApp.unitDescription.city">City</span></th>
+            <th><span jhiTranslate="ozeradbApp.unitDescription.createYear">Create Year</span></th>
+            <th><span jhiTranslate="ozeradbApp.unitDescription.square">Square</span></th>
+            <th><span jhiTranslate="ozeradbApp.unitDescription.collesctors">Collesctors</span></th>
+            <th><span jhiTranslate="ozeradbApp.unitDescription.prst">Prst</span></th>
+            <th><span jhiTranslate="ozeradbApp.unitDescription.sbros">Sbros</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let unitDescription of unitDescriptions ;trackBy: trackId">
+                <td><a [routerLink]="['../unit-description', unitDescription.id ]">{{unitDescription.id}}</a></td>
+                <td>{{unitDescription.city}}</td>
+                <td>{{unitDescription.createYear}}</td>
+                <td>{{unitDescription.square}}</td>
+                <td>{{unitDescription.collesctors}}</td>
+                <td>{{unitDescription.prst}}</td>
+                <td>{{unitDescription.sbros}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../unit-description', unitDescription.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'unit-description/'+ unitDescription.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'unit-description/'+ unitDescription.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+
+<div *ngIf="unit">
+    <h2><span jhiTranslate="ozeradbApp.unit.detail.title">Unit</span> {{unit.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="ozeradbApp.unit.unitName">Unit Name</span></dt>
+        <dd>
+            <span>{{unit.unitName}}</span>
+        </dd>
+        <dt><span jhiTranslate="ozeradbApp.unit.description">Description</span></dt>
+        <dd>
+            <div *ngIf="unit.description">
+                <a [routerLink]="['/unit-description', unit.description?.id]">{{unit.description?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="ozeradbApp.unit.researchMethod">Research Method</span></dt>
+        <dd>
+            <div *ngIf="unit.researchMethod">
+                <a [routerLink]="['/research-method', unit.researchMethod?.id]">{{unit.researchMethod?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="ozeradbApp.unit.ratingMethod">Rating Method</span></dt>
+        <dd>
+            <div *ngIf="unit.ratingMethod">
+                <a [routerLink]="['/rating-method', unit.ratingMethod?.id]">{{unit.ratingMethod?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="ozeradbApp.unit.typesProblems">Types Problems</span></dt>
+        <dd>
+            <div *ngIf="unit.typesProblems">
+                <a [routerLink]="['/types-problems', unit.typesProblems?.id]">{{unit.typesProblems?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'unit/'+ unit.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

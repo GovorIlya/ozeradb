@@ -1,0 +1,54 @@
+entity Unit {
+	unitName String required
+
+
+}
+
+entity UnitDescription {
+	city String,
+	createYear String,
+	square String,
+	collesctors String,
+	prst Integer,
+	sbros String
+
+}
+
+
+entity Image {
+	image ImageBlob
+}
+ entity ResearchMethod{
+		file AnyBlob
+ }
+ entity TypesProblems{
+	 problemDocument AnyBlob
+
+ }
+
+
+
+ entity RatingMethod{
+
+	 ratingDocument AnyBlob
+ }
+
+
+
+relationship OneToOne{
+Unit{description} to UnitDescription
+}
+relationship OneToMany{
+Unit{image} to Image
+}
+
+relationship OneToMany{
+ ResearchMethod{unit} to Unit{researchMethod}
+}
+relationship OneToMany{
+RatingMethod{unit} to Unit{ratingMethod}
+}
+relationship OneToMany{
+TypesProblems{unit} to Unit{typesProblems}
+}
+

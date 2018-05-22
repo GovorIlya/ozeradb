@@ -1,0 +1,37 @@
+
+<div *ngIf="image">
+    <h2><span jhiTranslate="ozeradbApp.image.detail.title">Image</span> {{image.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="ozeradbApp.image.image">Image</span></dt>
+        <dd>
+            <div *ngIf="image.image">
+                <a (click)="openFile(image.imageContentType, image.image)">
+                    <img [src]="'data:' + image.imageContentType + ';base64,' + image.image" style="max-width: 100%;" alt="image image"/>
+                </a>
+                {{image.imageContentType}}, {{byteSize(image.image)}}
+            </div>
+        </dd>
+        <dt><span jhiTranslate="ozeradbApp.image.unit">Unit</span></dt>
+        <dd>
+            <div *ngIf="image.unit">
+                <a [routerLink]="['/unit', image.unit?.id]">{{image.unit?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'image/'+ image.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

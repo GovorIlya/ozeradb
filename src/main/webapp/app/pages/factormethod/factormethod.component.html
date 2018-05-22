@@ -1,0 +1,37 @@
+<div>
+    <h2><span data-translate="jhipsterApp.factormethod.factormethod.title">Методика оценки поражающих факторов</span></h2>
+    <hr>
+
+
+
+    <div class="row">
+        <div class="col">
+            <div ngbDropdown class="d-inline-block">
+                <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Объекты</button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <!-- <button class="dropdown-item" >sdfsdf</button>-->
+                    <button  class="dropdown-item" *ngFor="let u of units;    let i =index;"  (click)="onClickMe(i)" >
+                        {{u.unitName}}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <span class="d-inline-block text-truncate"  style="max-width: 150px; font-weight: 600;"  >
+            {{unName}}
+    </span>
+
+    <div *ngFor="let r of researchmethods ; let ind =index;">
+        <div *ngIf="r.id==uFactorId">
+            <pdf-viewer
+                [src]="'data:' +r.fileContentType +';base64,' +r.file "
+                [render-text]="true"
+                [page]="page"
+                [show-all]="true"
+                style="display: block;"
+            ></pdf-viewer>
+        </div>
+    </div>
+
+</div>

@@ -4,9 +4,21 @@
         "browsehappy": "Ваш браузер <strong>устарел</strong>. Пожалуйста <a href=\"http://browsehappy.com/?locale=ru\">обновите ваш браузер</a>.",
         "menu": {
             "home": "Главная",
+            "kapta-kapta": "Kapta",
+            "description-description": "Description",
+            "teachstate-teachstate": "Teachstate",
+            "researchmethod-researchmethod": "Researchmethod",
+            "problemtypes-problemtypes": "Problemtypes",
+            "factormethod-factormethod": "Factormethod",
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Сущности",
+                "unit": "Unit",
+                "unitDescription": "Unit Description",
+                "image": "Image",
+                "researchMethod": "Research Method",
+                "typesProblems": "Types Problems",
+                "ratingMethod": "Rating Method",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
