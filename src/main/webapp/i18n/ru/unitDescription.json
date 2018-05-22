@@ -3,25 +3,25 @@
     "ozeradbApp": {
         "unitDescription" : {
             "home": {
-                "title": "Unit Descriptions",
-                "createLabel": "Создать новый Unit Description",
-                "createOrEditLabel": "Создать или отредактировать Unit Description"
+                "title": "Описание объектов",
+                "createLabel": "Создать новое Описание",
+                "createOrEditLabel": "Создать или отредактировать Описание"
             },
-            "created": "Новый Unit Description создан с идентификатором {{ param }}",
-            "updated": "Unit Description обновлен с идентификатором {{ param }}",
-            "deleted": "Unit Description удален с идентификатором {{ param }}",
+            "created": "Новое Описание создан с идентификатором {{ param }}",
+            "updated": "Описание обновлено с идентификатором {{ param }}",
+            "deleted": "Описание удалено с идентификатором {{ param }}",
             "delete": {
-                "question": "Вы уверены что хотите удалить Unit Description {{ id }}?"
+                "question": "Вы уверены что хотите удалить Описание {{ id }}?"
             },
             "detail": {
-                "title": "Unit Description"
+                "title": "Описание"
             },
-            "city": "City",
-            "createYear": "Create Year",
-            "square": "Square",
-            "collesctors": "Collesctors",
-            "prst": "Prst",
-            "sbros": "Sbros"
+            "city": "Населенный пункт",
+            "createYear": "Год постройки",
+            "square": "Площадь, га",
+            "collesctors": "Коллектора, к-во/диаметр,мм",
+            "prst": "Пр-сть, м3/смену",
+            "sbros": "Сброс очищенных вод"
         }
     }
 }

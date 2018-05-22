@@ -26,7 +26,8 @@ export class FactormethodComponent implements OnInit, OnDestroy {
     ratingMethods:RatingMethod[];
     units: Unit[];
     unName:string;
-    uFactorId: number;
+    // uFactorId: number;
+    uResearchId: number;
 
     factormethod: Factormethod = new Factormethod();
 
@@ -111,8 +112,11 @@ export class FactormethodComponent implements OnInit, OnDestroy {
         this.jhiAlertService.error(error.message, null, null);
     }
     onClickMe(uId:any) {
-        this.unName=this.units[uId].unitName;
-        this.uFactorId=this.units[uId].researchMethod.id;
+      //  this.unName=this.units[uId].unitName;
+       // this.uFactorId=this.units[uId].researchMethod.id
+
+         this.unName=this.units[uId].unitName;
+         this.uResearchId=this.units[uId].ratingMethod.id;
 
     }
 }

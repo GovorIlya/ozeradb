@@ -3,21 +3,21 @@
     "ozeradbApp": {
         "typesProblems" : {
             "home": {
-                "title": "Types Problems",
-                "createLabel": "Создать новый Types Problems",
-                "createOrEditLabel": "Создать или отредактировать Types Problems"
+                "title": "Виды характерных нарушений и их профилактика",
+                "createLabel": "Создать Виды характерных нарушений и их профилактика",
+                "createOrEditLabel": "Создать или отредактировать Виды характерных нарушений и их профилактика"
             },
-            "created": "Новый Types Problems создан с идентификатором {{ param }}",
-            "updated": "Types Problems обновлен с идентификатором {{ param }}",
-            "deleted": "Types Problems удален с идентификатором {{ param }}",
+            "created": "Новый Вид характерных нарушений и их профилактика создан с идентификатором {{ param }}",
+            "updated": "Виды характерных нарушений и их профилактика обновлен с идентификатором {{ param }}",
+            "deleted": "Виды характерных нарушений и их профилактика удален с идентификатором {{ param }}",
             "delete": {
-                "question": "Вы уверены что хотите удалить Types Problems {{ id }}?"
+                "question": "Вы уверены что хотите удалить Виды характерных нарушений и их профилактика {{ id }}?"
             },
             "detail": {
-                "title": "Types Problems"
+                "title": "Виды характерных нарушений и их профилактика"
             },
-            "problemDocument": "Problem Document",
-            "unit": "Unit"
+            "problemDocument": "Документ",
+            "unit": "Объект"
         }
     }
 }

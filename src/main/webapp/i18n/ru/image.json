@@ -3,21 +3,21 @@
     "ozeradbApp": {
         "image" : {
             "home": {
-                "title": "Images",
-                "createLabel": "Создать новый Image",
-                "createOrEditLabel": "Создать или отредактировать Image"
+                "title": "Изображения",
+                "createLabel": "Создать новое Изображение",
+                "createOrEditLabel": "Создать или отредактировать Изображение"
             },
             "created": "Новый Image создан с идентификатором {{ param }}",
             "updated": "Image обновлен с идентификатором {{ param }}",
             "deleted": "Image удален с идентификатором {{ param }}",
             "delete": {
-                "question": "Вы уверены что хотите удалить Image {{ id }}?"
+                "question": "Вы уверены что хотите удалить Изображение {{ id }}?"
             },
             "detail": {
-                "title": "Image"
+                "title": "Изображение"
             },
-            "image": "Image",
-            "unit": "Unit"
+            "image": "Изображение",
+            "unit": "Объект"
         }
     }
 }

@@ -3,21 +3,21 @@
     "ozeradbApp": {
         "ratingMethod" : {
             "home": {
-                "title": "Rating Methods",
-                "createLabel": "Создать новый Rating Method",
-                "createOrEditLabel": "Создать или отредактировать Rating Method"
+                "title": "Методика оценки поражающих факторов",
+                "createLabel": "Создать Методику оценки поражающих факторов",
+                "createOrEditLabel": "Создать или отредактировать Методику оценки поражающих факторов"
             },
-            "created": "Новый Rating Method создан с идентификатором {{ param }}",
-            "updated": "Rating Method обновлен с идентификатором {{ param }}",
-            "deleted": "Rating Method удален с идентификатором {{ param }}",
+            "created": "Новая Методика оценки поражающих факторов создана с идентификатором {{ param }}",
+            "updated": "Методика оценки поражающих факторов обновлена с идентификатором {{ param }}",
+            "deleted": "Методика оценки поражающих факторов удалена с идентификатором {{ param }}",
             "delete": {
                 "question": "Вы уверены что хотите удалить Rating Method {{ id }}?"
             },
             "detail": {
-                "title": "Rating Method"
+                "title": "Методика оценки поражающих факторов"
             },
-            "ratingDocument": "Rating Document",
-            "unit": "Unit"
+            "ratingDocument": "Документ",
+            "unit": "Объект"
         }
     }
 }

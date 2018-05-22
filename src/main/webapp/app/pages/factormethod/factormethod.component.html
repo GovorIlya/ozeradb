@@ -1,5 +1,5 @@
 <div>
-    <h2><span data-translate="jhipsterApp.factormethod.factormethod.title">Методика оценки поражающих факторов</span></h2>
+    <h2><span >Методика оценки поражающих факторов</span></h2>
     <hr>
 
 
@@ -21,8 +21,18 @@
     <span class="d-inline-block text-truncate"  style="max-width: 150px; font-weight: 600;"  >
             {{unName}}
     </span>
-
-    <div *ngFor="let r of researchmethods ; let ind =index;">
+    <div *ngFor="let fm of  ratingMethods ; let ind =index;">
+        <div *ngIf="fm.id==uResearchId">
+            <pdf-viewer
+                [src]="'data:' + fm.ratingDocumentContentType + ';base64,' + fm.ratingDocument"
+                [render-text]="true"
+                [page]="page"
+                [show-all]="true"
+                style="display: block;"
+            ></pdf-viewer>
+        </div>
+    </div>
+ <!--   <div *ngFor="let r of researchmethods ; let ind =index;">
         <div *ngIf="r.id==uFactorId">
             <pdf-viewer
                 [src]="'data:' +r.fileContentType +';base64,' +r.file "
@@ -32,6 +42,6 @@
                 style="display: block;"
             ></pdf-viewer>
         </div>
-    </div>
+    </div> -->
 
 </div>

@@ -11,6 +11,7 @@ import {PdfViewerModule} from 'ng2-pdf-viewer';
 import {FactormethodService} from '../factormethod';
 import {UnitService} from '../../entities/unit';
 import {RatingMethodService} from '../../entities/rating-method';
+import {ResearchMethodService} from '../../entities/research-method';
 
 const PAGE_SET_STATES = [
     ...ResearchmethodRoute,
@@ -32,7 +33,8 @@ const PAGE_SET_STATES = [
     ResearchmethodService,
         FactormethodService,
         UnitService,
-        RatingMethodService
+        RatingMethodService,
+        ResearchMethodService
 ],
 schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

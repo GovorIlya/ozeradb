@@ -1,8 +1,23 @@
+
 {
     "ozeradbApp": {
-        "researchmethod": {
-            "researchmethod": {
-                "title": "researchmethod"            }
+        "researchMethod" : {
+            "home": {
+                "title": "Методика обследования",
+                "createLabel": "Создать Методику обследования",
+                "createOrEditLabel": "Создать или отредактировать Методику обследования"
+            },
+            "created": "Новая Методику обследования создана с идентификатором {{ param }}",
+            "updated": "Методику обследования обновлена с идентификатором {{ param }}",
+            "deleted": "Методику обследования удалена с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Research Method {{ id }}?"
+            },
+            "detail": {
+                "title": "Методика обследования"
+            },
+            "file": "Документ",
+            "unit": "Объект"
         }
     }
 }

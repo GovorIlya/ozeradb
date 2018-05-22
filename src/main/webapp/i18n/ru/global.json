@@ -1,24 +1,25 @@
 {
     "global": {
-        "title": "Ozeradb",
+        "title": "Учет водохранилищ",
         "browsehappy": "Ваш браузер <strong>устарел</strong>. Пожалуйста <a href=\"http://browsehappy.com/?locale=ru\">обновите ваш браузер</a>.",
         "menu": {
             "home": "Главная",
-            "kapta-kapta": "Kapta",
-            "description-description": "Description",
-            "teachstate-teachstate": "Teachstate",
-            "researchmethod-researchmethod": "Researchmethod",
-            "problemtypes-problemtypes": "Problemtypes",
-            "factormethod-factormethod": "Factormethod",
+            "kapta-kapta": "карта",
+            "description-description": "Описание",
+            "teachstate-teachstate": "Техническое состояние",
+            "researchmethod-researchmethod": "Методика обследований",
+            "problemtypes-problemtypes": "Виды нарушений и их профилактика",
+            "factormethod-factormethod": "Методика оценки поражающих факторов",
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Сущности",
-                "unit": "Unit",
-                "unitDescription": "Unit Description",
-                "image": "Image",
-                "researchMethod": "Research Method",
-                "typesProblems": "Types Problems",
-                "ratingMethod": "Rating Method",
+                "image": "Изображения",
+                "unit": "Объект",
+                "unitDescription": "Опсиание объекта",
+                "researchMethod": "Метод обследования",
+                "typesProblems": "Виды нарушений и их профилактика",
+                "ratingMethod": "Методика оценки поражающих факторов",
+
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
@@ -140,5 +141,5 @@
         "emailexists": "Эл. почта уже используется!!",
         "idexists": "Новый {{entityName}} не может иметь данный ID"
     },
-    "footer": "Это ваш футтер"
+    "footer": ""
 }

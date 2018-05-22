@@ -3,25 +3,25 @@
     "ozeradbApp": {
         "unit" : {
             "home": {
-                "title": "Units",
-                "createLabel": "Создать новый Unit",
-                "createOrEditLabel": "Создать или отредактировать Unit"
+                "title": "Объекты",
+                "createLabel": "Создать новый Объект",
+                "createOrEditLabel": "Создать или отредактировать Объект"
             },
-            "created": "Новый Unit создан с идентификатором {{ param }}",
-            "updated": "Unit обновлен с идентификатором {{ param }}",
-            "deleted": "Unit удален с идентификатором {{ param }}",
+            "created": "Новый Объект создан с идентификатором {{ param }}",
+            "updated": "Объект обновлен с идентификатором {{ param }}",
+            "deleted": "Объект удален с идентификатором {{ param }}",
             "delete": {
-                "question": "Вы уверены что хотите удалить Unit {{ id }}?"
+                "question": "Вы уверены что хотите удалить Объект {{ id }}?"
             },
             "detail": {
-                "title": "Unit"
+                "title": "Объект"
             },
-            "unitName": "Unit Name",
-            "description": "Description",
-            "image": "Image",
-            "researchMethod": "Research Method",
-            "ratingMethod": "Rating Method",
-            "typesProblems": "Types Problems"
+            "unitName": "Наименование объекта",
+            "description": "Описание объекта",
+            "image": "Изображения",
+            "researchMethod": "Методика обследования",
+            "typesProblems": "Виды характерных нарущений и их профилактика",
+            "ratingMethod": "Методика оценки поражающих факторов"
         }
     }
 }

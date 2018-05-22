@@ -15,17 +15,21 @@ import {UnitService} from '../../entities/unit';
 import {RatingMethod} from '../../entities/rating-method';
 import {RatingMethodService} from '../../entities/rating-method';
 
+import {ResearchMethod} from '../../entities/research-method';
+import {ResearchMethodService} from '../../entities/research-method';
+
 @Component({
     selector: 'jhi-researchmethod',
     templateUrl: './researchmethod.component.html'
 })
 export class ResearchmethodComponent implements OnInit, OnDestroy {
-
+    researchmethods: ResearchMethod[];
     factormethods: Factormethod[];
     ratingMethods:RatingMethod[];
     units: Unit[];
     unName:string;
-    uResearchId: number;
+  //  uResearchId: number;
+    uFactorId: number;
 
 
     researchmethod: Researchmethod = new Researchmethod();
@@ -47,6 +51,7 @@ export class ResearchmethodComponent implements OnInit, OnDestroy {
         private factorMethodService: FactormethodService,
         private ratingMethodService:RatingMethodService,
         private unitService:UnitService,
+        private researchMethodService: ResearchMethodService,
         private researchmethodService: ResearchmethodService,
         private parseLinks: JhiParseLinks,
         private jhiAlertService: JhiAlertService,
@@ -56,6 +61,12 @@ export class ResearchmethodComponent implements OnInit, OnDestroy {
     }
 
     loadAll() {
+        this.researchMethodService.query().subscribe(
+            (res: HttpResponse<ResearchMethod[]>) => {
+                this.researchmethods= res.body;
+            },
+            (res: HttpErrorResponse) => this.onError(res.message)
+        );
         this.factorMethodService.query().subscribe(
             (res: HttpResponse<Factormethod[]>) => {
                 this.factormethods = res.body;
@@ -105,8 +116,11 @@ export class ResearchmethodComponent implements OnInit, OnDestroy {
         this.jhiAlertService.error(error.message, null, null);
     }
     onClickMe(uId:any) {
+       // this.unName=this.units[uId].unitName;
+        // this.uResearchId=this.units[uId].ratingMethod.id;
+
         this.unName=this.units[uId].unitName;
-        this.uResearchId=this.units[uId].ratingMethod.id;
+        this.uFactorId=this.units[uId].researchMethod.id;
 
 
     }
