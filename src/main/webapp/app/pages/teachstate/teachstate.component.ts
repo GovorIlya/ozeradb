@@ -13,12 +13,23 @@ import {ImageService} from '../../entities/image';
 import {Image} from '../../entities/image';
 import {Unit} from '../../entities/unit';
 import {UnitService} from '../../entities/unit';
+import {Regions} from './regions.model';
 
 @Component({
     selector: 'jhi-teachstate',
     templateUrl: './teachstate.component.html'
 })
 export class TeachstateComponent implements OnInit, OnDestroy {
+    regions: Regions[] =[
+        {Id:1, Name: 'Минская'},
+        {Id:2, Name: 'Гомельская'},
+        {Id:3, Name: 'Могилевская'},
+        {Id:4, Name: 'Витебская'},
+        {Id:5, Name: 'Гродненская'},
+        {Id:6, Name: 'Брестская'}
+    ];
+    btnState:boolean;
+    regionName: string;
     images: Image[];
     units: Unit[];
     unName: string;
@@ -69,7 +80,7 @@ export class TeachstateComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-
+        this.btnState=true;
         this.loadAll();
         this.principal.identity().then((account) => {
             this.currentAccount = account;
@@ -96,8 +107,21 @@ export class TeachstateComponent implements OnInit, OnDestroy {
         this.jhiAlertService.error(error.message, null, null);
     }
     onClickMe(uId:any) {
-        this.unId=this.units[uId].id;
-        this.unName=this.units[uId].unitName;
+        for (let un of this.units) {
+            if (un.id == uId) {
+                this.unName=un.unitName;
+                this.unId=uId;
+            }
+        }
+
+    }
+    onClickRegion(regname: string){
+        this.btnState=false;
+        this.regionName=regname;
+
+
+        this.unName = "";
+
 
     }
 }

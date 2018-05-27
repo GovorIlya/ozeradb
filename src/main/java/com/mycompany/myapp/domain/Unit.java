@@ -24,6 +24,9 @@ public class Unit implements Serializable {
     @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
+    @Column(name = "unit_region")
+    private String unitRegion;
+
     @NotNull
     @Column(name = "unit_name", nullable = false)
     private String unitName;
@@ -52,6 +55,19 @@ public class Unit implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getUnitRegion() {
+        return unitRegion;
+    }
+
+    public Unit unitRegion(String unitRegion) {
+        this.unitRegion = unitRegion;
+        return this;
+    }
+
+    public void setUnitRegion(String unitRegion) {
+        this.unitRegion = unitRegion;
     }
 
     public String getUnitName() {
@@ -169,6 +185,7 @@ public class Unit implements Serializable {
     public String toString() {
         return "Unit{" +
             "id=" + getId() +
+            ", unitRegion='" + getUnitRegion() + "'" +
             ", unitName='" + getUnitName() + "'" +
             "}";
     }

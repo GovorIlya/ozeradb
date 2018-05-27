@@ -17,12 +17,23 @@ import {RatingMethodService} from '../../entities/rating-method';
 
 import {ResearchMethod} from '../../entities/research-method';
 import {ResearchMethodService} from '../../entities/research-method';
+import {Regions} from './regions.model';
 
 @Component({
     selector: 'jhi-researchmethod',
     templateUrl: './researchmethod.component.html'
 })
 export class ResearchmethodComponent implements OnInit, OnDestroy {
+    regions: Regions[] =[
+        {Id:1, Name: 'Минская'},
+        {Id:2, Name: 'Гомельская'},
+        {Id:3, Name: 'Могилевская'},
+        {Id:4, Name: 'Витебская'},
+        {Id:5, Name: 'Гродненская'},
+        {Id:6, Name: 'Брестская'}
+    ];
+    btnState:boolean;
+    regionName: string;
     researchmethods: ResearchMethod[];
     factormethods: Factormethod[];
     ratingMethods:RatingMethod[];
@@ -88,7 +99,7 @@ export class ResearchmethodComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-
+        this.btnState=true;
         this.loadAll();
         this.principal.identity().then((account) => {
             this.currentAccount = account;
@@ -119,8 +130,25 @@ export class ResearchmethodComponent implements OnInit, OnDestroy {
        // this.unName=this.units[uId].unitName;
         // this.uResearchId=this.units[uId].ratingMethod.id;
 
-        this.unName=this.units[uId].unitName;
-        this.uFactorId=this.units[uId].researchMethod.id;
+        for (let un of this.units) {
+            for (let res of this.researchmethods) {
+                if (un.id == uId && un.researchMethod.id==res.id) {
+                    this.unName = un.unitName;
+                    this.uFactorId=un.researchMethod.id;
+
+                }
+            }
+        }
+       // this.uFactorId=this.units[uId].researchMethod.id;
+
+
+    }
+    onClickRegion(regname: string){
+        this.btnState=false;
+        this.regionName=regname;
+
+
+        this.unName = "";
 
 
     }

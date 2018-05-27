@@ -17,6 +17,7 @@
             <thead>
             <tr>
             <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="ozeradbApp.unit.unitRegion">Unit Region</span></th>
             <th><span jhiTranslate="ozeradbApp.unit.unitName">Unit Name</span></th>
             <th><span jhiTranslate="ozeradbApp.unit.description">Description</span></th>
             <th><span jhiTranslate="ozeradbApp.unit.researchMethod">Research Method</span></th>
@@ -28,6 +29,7 @@
             <tbody>
             <tr *ngFor="let unit of units ;trackBy: trackId">
                 <td><a [routerLink]="['../unit', unit.id ]">{{unit.id}}</a></td>
+                <td>{{unit.unitRegion}}</td>
                 <td>{{unit.unitName}}</td>
                 <td>
                     <div *ngIf="unit.description">

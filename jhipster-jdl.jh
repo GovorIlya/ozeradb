@@ -1,5 +1,7 @@
 entity Unit {
-	unitName String required
+unitRegion String,
+unitName String required,
+
 
 
 }

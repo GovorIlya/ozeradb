@@ -36,6 +36,10 @@
     ],
     "fields": [
         {
+            "fieldName": "unitRegion",
+            "fieldType": "String"
+        },
+        {
             "fieldName": "unitName",
             "fieldType": "String",
             "fieldValidateRules": [

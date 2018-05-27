@@ -13,6 +13,7 @@ import {Unit} from '../../entities/unit';
 import {UnitService} from '../../entities/unit';
 import {TypesProblems} from '../../entities/types-problems';
 import {TypesProblemsService} from '../../entities/types-problems';
+import {Regions} from './regions.model';
 
 
 @Component({
@@ -20,6 +21,16 @@ import {TypesProblemsService} from '../../entities/types-problems';
     templateUrl: './problemtypes.component.html'
 })
 export class ProblemtypesComponent implements OnInit, OnDestroy {
+    regions: Regions[] =[
+        {Id:1, Name: 'Минская'},
+        {Id:2, Name: 'Гомельская'},
+        {Id:3, Name: 'Могилевская'},
+        {Id:4, Name: 'Витебская'},
+        {Id:5, Name: 'Гродненская'},
+        {Id:6, Name: 'Брестская'}
+    ];
+    btnState:boolean;
+    regionName: string;
 
     unName: string;
     uProblemId: number;
@@ -71,7 +82,7 @@ export class ProblemtypesComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-
+        this.btnState=true;
         this.loadAll();
         this.principal.identity().then((account) => {
             this.currentAccount = account;
@@ -99,10 +110,31 @@ export class ProblemtypesComponent implements OnInit, OnDestroy {
         this.jhiAlertService.error(error.message, null, null);
     }
 
+
     onClickMe(uId:any) {
-        this.unId=this.units[uId].id;
-        this.unName=this.units[uId].unitName;
-        this.uProblemId=this.units[uId].typesProblems.id;
+      //  this.unId=this.units[uId].id;
+       // this.unName=this.units[uId].unitName;
+       // this.uProblemId=this.units[uId].typesProblems.id;
+
+        for (let un of this.units) {
+                if (un.id == uId) {
+                    this.unName = un.unitName;
+                    this.unId=un.id;
+                    this.uProblemId=un.typesProblems.id;
+                }
+            }
+        }
+        // this.uFactorId=this.units[uId].researchMethod.id;
+
+
+
+    onClickRegion(regname: string){
+        this.btnState=false;
+        this.regionName=regname;
+
+
+        this.unName = "";
+
 
     }
 }

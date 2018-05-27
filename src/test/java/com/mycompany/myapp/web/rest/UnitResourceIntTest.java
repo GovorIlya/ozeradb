@@ -38,6 +38,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = OzeradbApp.class)
 public class UnitResourceIntTest {
 
+    private static final String DEFAULT_UNIT_REGION = "AAAAAAAAAA";
+    private static final String UPDATED_UNIT_REGION = "BBBBBBBBBB";
+
     private static final String DEFAULT_UNIT_NAME = "AAAAAAAAAA";
     private static final String UPDATED_UNIT_NAME = "BBBBBBBBBB";
 
@@ -79,6 +82,7 @@ public class UnitResourceIntTest {
      */
     public static Unit createEntity(EntityManager em) {
         Unit unit = new Unit()
+            .unitRegion(DEFAULT_UNIT_REGION)
             .unitName(DEFAULT_UNIT_NAME);
         return unit;
     }
@@ -103,6 +107,7 @@ public class UnitResourceIntTest {
         List<Unit> unitList = unitRepository.findAll();
         assertThat(unitList).hasSize(databaseSizeBeforeCreate + 1);
         Unit testUnit = unitList.get(unitList.size() - 1);
+        assertThat(testUnit.getUnitRegion()).isEqualTo(DEFAULT_UNIT_REGION);
         assertThat(testUnit.getUnitName()).isEqualTo(DEFAULT_UNIT_NAME);
     }
 
@@ -154,6 +159,7 @@ public class UnitResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(unit.getId().intValue())))
+            .andExpect(jsonPath("$.[*].unitRegion").value(hasItem(DEFAULT_UNIT_REGION.toString())))
             .andExpect(jsonPath("$.[*].unitName").value(hasItem(DEFAULT_UNIT_NAME.toString())));
     }
 
@@ -168,6 +174,7 @@ public class UnitResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(unit.getId().intValue()))
+            .andExpect(jsonPath("$.unitRegion").value(DEFAULT_UNIT_REGION.toString()))
             .andExpect(jsonPath("$.unitName").value(DEFAULT_UNIT_NAME.toString()));
     }
 
@@ -191,6 +198,7 @@ public class UnitResourceIntTest {
         // Disconnect from session so that the updates on updatedUnit are not directly saved in db
         em.detach(updatedUnit);
         updatedUnit
+            .unitRegion(UPDATED_UNIT_REGION)
             .unitName(UPDATED_UNIT_NAME);
 
         restUnitMockMvc.perform(put("/api/units")
@@ -202,6 +210,7 @@ public class UnitResourceIntTest {
         List<Unit> unitList = unitRepository.findAll();
         assertThat(unitList).hasSize(databaseSizeBeforeUpdate);
         Unit testUnit = unitList.get(unitList.size() - 1);
+        assertThat(testUnit.getUnitRegion()).isEqualTo(UPDATED_UNIT_REGION);
         assertThat(testUnit.getUnitName()).isEqualTo(UPDATED_UNIT_NAME);
     }
 

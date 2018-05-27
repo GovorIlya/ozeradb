@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
- import { Subscription } from 'rxjs/Rx';
+import { Subscription } from 'rxjs/Rx';
 import { JhiEventManager, JhiParseLinks, JhiAlertService } from 'ng-jhipster';
 import { Observable } from 'rxjs/Rx';
 
@@ -12,14 +12,25 @@ import {UnitDescriptionService} from '../../entities/unit-description';
 import {UnitDescription} from '../../entities/unit-description';
 import {Unit} from '../../entities/unit';
 import {UnitService} from '../../entities/unit';
+import {Regions} from './regions.model';
 
 @Component({
     selector: 'jhi-description',
     templateUrl: './description.component.html'
 })
 export class DescriptionComponent implements OnInit, OnDestroy {
-
+    regions: Regions[] =[
+        {Id:1, Name: 'Минская'},
+        {Id:2, Name: 'Гомельская'},
+        {Id:3, Name: 'Могилевская'},
+        {Id:4, Name: 'Витебская'},
+        {Id:5, Name: 'Гродненская'},
+        {Id:6, Name: 'Брестская'}
+    ];
+    btnState:boolean;
+regionName: string;
     unitDescriptions: UnitDescription[];
+    unitDescriptionId: any;
     units: Unit[];
     unName: string;
     createYear: string;
@@ -73,7 +84,7 @@ export class DescriptionComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-
+       this.btnState=true;
         this.loadAll();
         this.principal.identity().then((account) => {
             this.currentAccount = account;
@@ -101,11 +112,30 @@ export class DescriptionComponent implements OnInit, OnDestroy {
         this.jhiAlertService.error(error.message, null, null);
     }
     onClickMe(uId:any) {
-        this.unName=this.units[uId].unitName;
-        this.createYear=this.unitDescriptions[uId].createYear;
-        this.square=this.unitDescriptions[uId].square;
-        this.collectors=this.unitDescriptions[uId].collesctors;
-        this.prst=this.unitDescriptions[uId].prst;
-        this.sbros=this.unitDescriptions[uId].sbros;
+        for (let un of this.units) {
+            for (let des of this.unitDescriptions) {
+                if (un.id == uId && un.description.id==des.id) {
+                    this.unName = un.unitName;
+                    this.createYear=des.createYear;
+                    this.square=des.square;
+                    this.collectors=des.collesctors;
+                    this.prst=des.prst;
+                    this.sbros=des.sbros;
+                }
+            }
+        }
+    }
+    onClickRegion(regname: string){
+        this.btnState=false;
+        this.regionName=regname;
+
+
+        this.unName = "";
+        this.createYear="";
+        this.square="";
+        this.collectors="";
+        this.prst=null;
+        this.sbros="";
+
     }
 }

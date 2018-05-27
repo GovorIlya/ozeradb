@@ -20,6 +20,7 @@
                 "typesProblems": "Виды нарушений и их профилактика",
                 "ratingMethod": "Методика оценки поражающих факторов",
 
+
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
