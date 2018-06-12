@@ -1,5 +1,12 @@
 <div class="row">
-    <img src="D:\ozeradb\src\main\webapp\content\images\111.jpg" class="img-fluid" alt="Responsive image" width="1470px">
+    <div class="col-md-9">
+        <h1 class="display-4" >Информационная система учета водоемов Республики Беларусь</h1>
+
+        <div class="alert alert-warning">
+            <p class="lead" >Для входа авторизируйтесь во вкладке профиль</p>
+        </div>
+    </div>
+
     <div [ngSwitch]="isAuthenticated()">
         <div class="alert alert-success" *ngSwitchCase="true">
                 <span *ngIf="account" jhiTranslate="home.logged.message"

@@ -40,7 +40,7 @@
       "ru"
     ],
     "herokuDeployType": "jar",
-    "herokuAppName": "glacial-sands-48466"
+    "herokuAppName": null
   },
   "generator-jhipster-pages": {
     "promptValues": {

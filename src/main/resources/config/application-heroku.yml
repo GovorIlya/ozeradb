@@ -12,7 +12,7 @@
 
 eureka:
     instance:
-        hostname: glacial-sands-48466.herokuapp.com
+        hostname: ozeradb.herokuapp.com
         non-secure-port: 80
         prefer-ip-address: false
     client:

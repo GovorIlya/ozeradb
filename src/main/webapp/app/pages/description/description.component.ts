@@ -33,6 +33,7 @@ regionName: string;
     unitDescriptionId: any;
     units: Unit[];
     unName: string;
+    city:string;
     createYear: string;
     square: string;
     collectors: string;
@@ -116,6 +117,7 @@ regionName: string;
             for (let des of this.unitDescriptions) {
                 if (un.id == uId && un.description.id==des.id) {
                     this.unName = un.unitName;
+                    this.city=des.city;
                     this.createYear=des.createYear;
                     this.square=des.square;
                     this.collectors=des.collesctors;
